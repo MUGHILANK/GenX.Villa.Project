@@ -1,10 +1,15 @@
 services:
   - type: web
     name: genx-villa-api
-    env: dotnet
-    plan: free
-    region: oregon
+    runtime: dotnet
+    repo: https://github.com/MUGHILANK/GenX.Vi11a.Project
     branch: main
-    buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/Myapp.Api.dll
-    autoDeploy: true
+    buildCommand: dotnet build
+    startCommand: dotnet Myapp.Api.dll
+    buildFilter:
+      paths:
+        - Myapp.Api/**
+    env: 
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+    plan: free
