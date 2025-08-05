@@ -9,7 +9,7 @@ services:
     buildFilter:
       paths:
         - Myapp.Api/**
-    env: 
+    env:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
     plan: free
