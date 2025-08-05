@@ -8,7 +8,5 @@ services:
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-      # Add your connection strings and other secrets here
-      # - key: ConnectionStrings__DefaultConnection
-      #   value: <your-connection-string>
+      # Add other environment variables as needed
     autoDeploy: true
