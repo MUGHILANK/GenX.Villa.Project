@@ -1,12 +1,11 @@
 services:
   - type: web
     name: myapp-api
-    runtime: dotnet
+    env: dotnet
     plan: free
     buildCommand: dotnet build Myapp.Api/Myapp.Api.csproj --configuration Release
     startCommand: dotnet Myapp.Api/Myapp.Api.dll
-    env:
+    envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-      # Add other environment variables as needed
     autoDeploy: true
