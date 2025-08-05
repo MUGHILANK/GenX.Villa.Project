@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: dotnet build Myapp.Api/Myapp.Api.csproj --configuration Release
     startCommand: dotnet Myapp.Api/Myapp.Api.dll
-    envVars:
+    env:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       # Add other environment variables as needed
