@@ -6,5 +6,5 @@ services:
     region: oregon
     branch: main
     buildCommand: dotnet publish -c Release -o out
-    startCommand: dotnet out/GenX.Villa.Api.dll
+    startCommand: dotnet out/Myapp.Api.dll
     autoDeploy: true
