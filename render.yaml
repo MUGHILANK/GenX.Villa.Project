@@ -1,15 +1,14 @@
 services:
   - type: web
-    name: genx-villa-api
-    runtime: dotnet
-    repo: https://github.com/MUGHILANK/GenX.Vi11a.Project
-    branch: main
-    buildCommand: dotnet build
-    startCommand: dotnet Myapp.Api.dll
-    buildFilter:
-      paths:
-        - Myapp.Api/**
-    env:
+    name: myapp-api
+    env: dotnet
+    plan: free
+    buildCommand: dotnet build Myapp.Api/Myapp.Api.csproj --configuration Release
+    startCommand: dotnet Myapp.Api/Myapp.Api.dll
+    envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
-    plan: free
+      # Add your connection strings and other secrets here
+      # - key: ConnectionStrings__DefaultConnection
+      #   value: <your-connection-string>
+    autoDeploy: true
